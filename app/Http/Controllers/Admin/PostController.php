@@ -129,6 +129,6 @@ class PostController extends Controller
             Storage::disk('public')->delete($post->image);
         }
         $post->delete();
-        return redirect()->route('admin.posts.index')->with('success', 'Post deleted successfully.');
+        return redirect()->back()->with('success', 'Post deleted successfully.');
     }
 }

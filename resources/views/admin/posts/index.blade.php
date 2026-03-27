@@ -1,11 +1,18 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="flex justify-between items-center mb-6">
-    <h1 class="text-2xl font-bold text-gray-900 tracking-tight">Posts</h1>
-    <a href="{{ route('admin.posts.create') }}" class="bg-indigo-600 text-white px-4 py-2 rounded-lg shadow-sm hover:shadow-md hover:bg-indigo-700 transition flex items-center">
-        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
-        Create Post
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+    <div>
+        <span class="inline-block text-[10px] font-black tracking-[0.4em] uppercase text-stone-400 mb-4 border-b border-stone-200 pb-2">
+            Content Library
+        </span>
+        <h1 class="text-4xl md:text-5xl font-black text-stone-900 tracking-tighter leading-none">
+            Manage <span class="text-stone-400 italic font-serif font-normal text-3xl md:text-4xl">Stories.</span>
+        </h1>
+    </div>
+    <a href="{{ route('admin.posts.create') }}" class="bg-stone-900 text-stone-50 px-8 py-4 rounded-2xl shadow-xl hover:bg-stone-800 transition-all duration-300 flex items-center text-[10px] font-black uppercase tracking-widest group">
+        <svg class="w-4 h-4 mr-3 transform group-hover:rotate-90 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+        New Publication
     </a>
 </div>
 
