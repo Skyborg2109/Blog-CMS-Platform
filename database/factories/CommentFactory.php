@@ -33,9 +33,9 @@ class CommentFactory extends Factory
         return [
             'post_id' => \App\Models\Post::factory(),
             'user_id' => null,
-            'name' => $this->faker->name(),
-            'email' => $this->faker->safeEmail(),
-            'body' => $this->faker->randomElement($komentarIndo),
+            'name' => \fake()->name(),
+            'email' => \fake()->safeEmail(),
+            'body' => \fake()->randomElement($komentarIndo),
         ];
     }
 }

@@ -43,16 +43,16 @@ class PostFactory extends Factory
             'Kerja keras yang dibarengi dengan strategi yang tepat akan membuahkan hasil yang maksimal. Jangan pernah takut untuk mencoba hal-hal baru yang dapat meningkatkan kualitas hidup kita.'
         ];
 
-        $title = $this->faker->randomElement($judulIndo);
+        $title = \fake()->randomElement($judulIndo);
         return [
             'user_id' => \App\Models\User::factory(),
             'category_id' => \App\Models\Category::factory(),
             'title' => $title,
-            'slug' => \Illuminate\Support\Str::slug($title . '-' . $this->faker->unique()->numerify('####')),
+            'slug' => \Illuminate\Support\Str::slug($title . '-' . \fake()->unique()->numerify('####')),
             'image' => null,
-            'body' => '<p>' . implode('</p><p>', $this->faker->randomElements($kontenIndo, rand(3, 5))) . '</p>',
+            'body' => '<p>' . implode('</p><p>', \fake()->randomElements($kontenIndo, rand(3, 5))) . '</p>',
             'status' => 'published',
-            'published_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
+            'published_at' => \fake()->dateTimeBetween('-1 year', 'now'),
         ];
     }
 }
